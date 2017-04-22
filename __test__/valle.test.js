@@ -1,14 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import valid from '../src';
+import valle from '../src';
 
 import Input from './fakeComponent/Input';
 
-valid.addMethod('required', value => value !== '', 'It should have value');
+valle.addMethod('required', value => value !== '', 'It should have value');
 
 test('It sould be valid if input has value', () => {
-  const ValidInput = valid.connect(Input);
+  const ValidInput = valle.connect(Input);
   const wrapper = mount(<ValidInput required />);
 
   wrapper.find('input').simulate('change', {
@@ -22,7 +22,7 @@ test('It sould be valid if input has value', () => {
 });
 
 test('It sould be not valid if input has empty', () => {
-  const ValidInput = valid.connect(Input);
+  const ValidInput = valle.connect(Input);
   const wrapper = mount(<ValidInput required />);
 
   wrapper.find('input').simulate('change', {

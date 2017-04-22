@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function createValid() {
+export function createValle() {
   const validates = {};
 
   const addMethod = (name, validate, message = '') => {
@@ -66,4 +66,4 @@ export function createValid() {
   };
 }
 
-export default createValid();
+export default createValle();

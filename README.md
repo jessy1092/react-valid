@@ -1,4 +1,4 @@
-react-valid
+valle
 =============
 [![npm][npm-image]][npm-url] [![Build Status][travis-ci-image]][travis-ci-url] [![Dependency Status][david-dm-image]][david-dm-url] [![Coverage Status][coverage-status-image]][coverage-status-url]
 
@@ -15,7 +15,7 @@ Inspire by
 
 - **Extendable**: You can defined validator through jQuery-validation-like `addMethod` by yourself
 - **Easily**: Just pass the properties to component to control which validator you want to use
-- **Functionally**: react-valid use HOC component to wrap component which want to be valided, so you can wrap any component easily.
+- **Functionally**: valle use HOC component to wrap component which want to be valided, so you can wrap any component easily.
 
 ## Full Example
 
@@ -25,9 +25,9 @@ You can see the simple example on [example](./example)
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import valid from 'react-valid';
+import valle from 'valle';
 
-// react-valid would pass three properties to component
+// valle would pass three properties to component
 // valid(Boolean): Present component is valid or not
 // message(String): Error message if not valid
 // validate(Function): Trigger validate. Just pass string value
@@ -39,13 +39,13 @@ const Input = ({ validate, message }) => (
 );
 
 // User defined validator
-valid.addMethod('required', value => value !== '', 'It should have value');
+valle.addMethod('required', value => value !== '', 'It should have value');
 
 // Use HOC to connect component
-const ValidInput = valid.connect(Input);
+const ValidInput = valle.connect(Input);
 
 ReactDOM.render(
-	// Just pass properties to tell react-valid which validator you want to use
+	// Just pass properties to tell valle which validator you want to use
 	<ValidInput required />,
 	document.getElementById('content')
 );
@@ -111,16 +111,16 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-[npm-image]: https://img.shields.io/npm/v/react-valid.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/react-valid
+[npm-image]: https://img.shields.io/npm/v/valle.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/valle
 
-[travis-ci-image]: https://img.shields.io/travis/jessy1092/react-valid.svg?style=flat-square
-[travis-ci-url]: https://travis-ci.org/jessy1092/react-valid
+[travis-ci-image]: https://img.shields.io/travis/jessy1092/valle.svg?style=flat-square
+[travis-ci-url]: https://travis-ci.org/jessy1092/valle
 
-[david-dm-image]: https://img.shields.io/david/jessy1092/react-valid.svg?style=flat-square
-[david-dm-url]: https://david-dm.org/jessy1092/react-valid
-[david-dm-dev-image]: https://img.shields.io/david/dev/jessy1092/react-valid.svg?style=flat-square
-[david-dm-dev-url]: https://david-dm.org/jessy1092/react-valid#info=devDependencies
+[david-dm-image]: https://img.shields.io/david/jessy1092/valle.svg?style=flat-square
+[david-dm-url]: https://david-dm.org/jessy1092/valle
+[david-dm-dev-image]: https://img.shields.io/david/dev/jessy1092/valle.svg?style=flat-square
+[david-dm-dev-url]: https://david-dm.org/jessy1092/valle#info=devDependencies
 
-[coverage-status-image]: https://img.shields.io/coveralls/jessy1092/react-valid.svg?style=flat-square
-[coverage-status-url]: https://coveralls.io/r/jessy1092/react-valid
+[coverage-status-image]: https://img.shields.io/coveralls/jessy1092/valle.svg?style=flat-square
+[coverage-status-url]: https://coveralls.io/r/jessy1092/valle

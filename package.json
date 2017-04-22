@@ -1,5 +1,5 @@
 {
-  "name": "react-valid",
+  "name": "valle",
   "description": "Help to validate react component easily, functionally and extendable",
   "version": "0.0.1",
   "keywords": [
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessy1092/react-valid"
+    "url": "https://github.com/jessy1092/valle"
   },
   "bugs": {
-    "url": "https://github.com/jessy1092/react-valid/issues"
+    "url": "https://github.com/jessy1092/valle/issues"
   },
   "license": "MIT",
   "scripts": {
