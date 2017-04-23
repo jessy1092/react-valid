@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It could add custom methods through addMethods 1`] = `
+<Vali(Input)
+  required={true}
+>
+  <Input
+    message=""
+    required={true}
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Vali(Input)>
+`;

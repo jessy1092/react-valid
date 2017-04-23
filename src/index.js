@@ -10,6 +10,20 @@ export function createValle() {
     };
   };
 
+  const addMethods = (newValidates = {}) => {
+    const defaultValidator = {
+      method() {},
+      message: '',
+    };
+
+    Object.keys(newValidates).forEach(name => {
+      validates[name] = {
+        ...defaultValidator, // Set default value to prevent method not define
+        ...newValidates[name],
+      };
+    });
+  };
+
   const connect = Component => {
     const displayName = Component.displayName || Component.name || 'Component';
 
@@ -62,6 +76,7 @@ export function createValle() {
 
   return {
     addMethod,
+    addMethods,
     connect,
   };
 }
