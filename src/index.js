@@ -3,9 +3,9 @@ import React from 'react';
 export function createValle() {
   const validates = {};
 
-  const addMethod = (name, validate, message = '') => {
+  const addMethod = (name, method, message = '') => {
     validates[name] = {
-      validate,
+      method,
       message,
     };
   };
@@ -30,7 +30,7 @@ export function createValle() {
 
         const status = Object.keys(validates).every(name => {
           if (Object.prototype.hasOwnProperty.call(other, name)) {
-            if (!validates[name].validate(value, this.props[name])) {
+            if (!validates[name].method(value, this.props[name])) {
               message = validates[name].message;
               return false;
             }
