@@ -57,29 +57,20 @@ ReactDOM.render(
 
 Could define the custom validator
 
+ex.
+```js
+valle.addMethod('required', value => value !== '', 'It should have value');
+```
+
 #### Arguments
 
 - [`name`]\(*String*): Validator name
 - [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
 - [`message`]\(*String*): Validate failed message
 
-ex.
-```js
-valle.addMethod('required', value => value !== '', 'It should have value');
-```
-
 ### addMethods(validators)
 
 Could define the many custom validators at once
-
-#### Arguments
-
-- [`validators`]\(*Object*): Validators' object, each validator has two key: `method` and `message`
-
-Validator object format:
-
-- [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
-- [`message`]\(*String*): Validate failed message
 
 ex. 
 ```js
@@ -91,6 +82,15 @@ valle.addMethods({
 });
 ```
 
+#### Arguments
+
+- [`validators`]\(*Object*): Validators' object, each validator has two key: `method` and `message`
+
+Validator object format:
+
+- [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
+- [`message`]\(*String*): Validate failed message
+
 ### connect(Component)
 
 Use Higher-Order component to wrap component.
@@ -98,6 +98,27 @@ Use Higher-Order component to wrap component.
 #### Arguments
 
 - [`Component`]\(*Component*): The Component which want to validate.
+
+### template`Template Strings`
+
+It could use ES6 `Template Strings` to custom message
+
+ex.
+```js
+valle.addMethods({
+  empty: {
+    method: value => value === '',
+    message: valle.template`It has value: ${0}`,
+  },
+});
+```
+
+#### Template Strings Arguments
+
+- `${0}`: The validate value
+- `${1}`: The property value
+- `${key}`: If property value is the object, it could use key to read it.
+
 
 ## Todo
 

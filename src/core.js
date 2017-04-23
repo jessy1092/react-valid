@@ -49,7 +49,13 @@ export const connect = (validators, Component) => {
       const status = Object.keys(validators).every(name => {
         if (Object.prototype.hasOwnProperty.call(other, name)) {
           if (!validators[name].method(value, this.props[name])) {
-            message = validators[name].message;
+            if (typeof validators[name].message === 'string') {
+              // Display normal string message
+              message = validators[name].message;
+            } else {
+              // Use template to generate message
+              message = validators[name].message(value, this.props[name]);
+            }
             return false;
           }
         }
@@ -76,4 +82,20 @@ export const connect = (validators, Component) => {
   ValidComponent.displayName = `Valle(${displayName})`;
 
   return ValidComponent;
+};
+
+export const template = (strings, ...keys) => (validateValue, props) => {
+  const result = [strings[0]];
+  keys.forEach((key, i) => {
+    let value = '';
+    if (key === 0) {
+      value = validateValue;
+    } else if (key === 1) {
+      value = typeof props === 'string' || !isNaN(props) ? props : props[key];
+    } else {
+      value = props[key];
+    }
+    result.push(value, strings[i + 1]);
+  });
+  return result.join('');
 };

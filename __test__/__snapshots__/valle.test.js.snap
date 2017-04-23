@@ -20,6 +20,28 @@ exports[`It could add custom methods through addMethods 1`] = `
 </Valle(Input)>
 `;
 
+exports[`It could add template message to custom message 1`] = `
+<Valle(Input)
+  empty={true}
+>
+  <Input
+    empty={true}
+    message="It has value: Hi"
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        It has value: Hi
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
 exports[`It sould be not valid if input has empty 1`] = `
 <Valle(Input)
   required={true}

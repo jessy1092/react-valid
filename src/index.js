@@ -1,4 +1,4 @@
-import { addMethod, addMethods, connect } from './core';
+import { addMethod, addMethods, connect, template } from './core';
 
 import isEmail from './validators/isEmail';
 
@@ -15,6 +15,7 @@ export function createValle() {
     connect(Component) {
       return connect(validators, Component);
     },
+    template,
   };
 }
 
