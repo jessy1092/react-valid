@@ -1,5 +1,7 @@
 import { addMethod, addMethods, connect } from './core';
 
+import isEmail from './validators/isEmail';
+
 export function createValle() {
   let validators = {};
 
@@ -16,4 +18,8 @@ export function createValle() {
   };
 }
 
-export default createValle();
+const valle = createValle();
+
+valle.addMethods(isEmail);
+
+export default valle;
