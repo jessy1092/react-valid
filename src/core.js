@@ -73,7 +73,7 @@ export const connect = (validators, Component) => {
       return <Component {...this.props} {...this.state} validate={this.validate} />;
     }
   }
-  ValidComponent.displayName = `Vali(${displayName})`;
+  ValidComponent.displayName = `Valle(${displayName})`;
 
   return ValidComponent;
 };

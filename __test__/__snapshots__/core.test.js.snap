@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It sould be return valle component if connect the basic component 1`] = `
-<Vali(Input)
+<Valle(Input)
   required={true}
 >
   <Input
@@ -19,5 +19,5 @@ exports[`It sould be return valle component if connect the basic component 1`] =
       </div>
     </div>
   </Input>
-</Vali(Input)>
+</Valle(Input)>
 `;
