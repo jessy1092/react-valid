@@ -1,83 +1,18 @@
-import React from 'react';
+import { addMethod, addMethods, connect } from './core';
 
 export function createValle() {
-  const validates = {};
-
-  const addMethod = (name, method, message = '') => {
-    validates[name] = {
-      method,
-      message,
-    };
-  };
-
-  const addMethods = (newValidates = {}) => {
-    const defaultValidator = {
-      method() {},
-      message: '',
-    };
-
-    Object.keys(newValidates).forEach(name => {
-      validates[name] = {
-        ...defaultValidator, // Set default value to prevent method not define
-        ...newValidates[name],
-      };
-    });
-  };
-
-  const connect = Component => {
-    const displayName = Component.displayName || Component.name || 'Component';
-
-    class ValidComponent extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          valid: true,
-          message: '',
-        };
-
-        this.validate = this.validate.bind(this);
-      }
-
-      validate(value) {
-        const { onError = () => {}, ...other } = this.props;
-        let message = '';
-
-        const status = Object.keys(validates).every(name => {
-          if (Object.prototype.hasOwnProperty.call(other, name)) {
-            if (!validates[name].method(value, this.props[name])) {
-              message = validates[name].message;
-              return false;
-            }
-          }
-          return true;
-        });
-
-        this.setState(
-          {
-            valid: status,
-            message,
-          },
-          () => {
-            if (!status) {
-              onError(value);
-            }
-          },
-        );
-      }
-
-      render() {
-        return <Component {...this.props} {...this.state} validate={this.validate} />;
-      }
-    }
-    ValidComponent.displayName = `Vali(${displayName})`;
-
-    return ValidComponent;
-  };
+  let validators = {};
 
   return {
-    addMethod,
-    addMethods,
-    connect,
+    addMethod(name, method, message) {
+      validators = addMethod(validators, name, method, message);
+    },
+    addMethods(appendValidators) {
+      validators = addMethods(validators, appendValidators);
+    },
+    connect(Component) {
+      return connect(validators, Component);
+    },
   };
 }
 

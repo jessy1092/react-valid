@@ -1,20 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`It could add custom methods through addMethods 1`] = `
+exports[`It sould be return valle component if connect the basic component 1`] = `
 <Vali(Input)
   required={true}
 >
   <Input
-    message=""
+    message="It should have value"
     required={true}
-    valid={true}
+    valid={false}
     validate={[Function]}
   >
     <div>
       <input
         onChange={[Function]}
       />
-      <div />
+      <div>
+        It should have value
+      </div>
     </div>
   </Input>
 </Vali(Input)>
