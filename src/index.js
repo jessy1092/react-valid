@@ -9,6 +9,7 @@ import isISO8601 from './validators/isISO8601';
 import isInt from './validators/isInt';
 import isNumeric from './validators/isNumeric';
 import matches from './validators/matches';
+import required from './validators/required';
 
 export function createValle() {
   let validators = {};
@@ -38,5 +39,6 @@ valle.addMethods(isISO8601);
 valle.addMethods(isInt);
 valle.addMethods(isNumeric);
 valle.addMethods(matches);
+valle.addMethods(required);
 
 export default valle;
