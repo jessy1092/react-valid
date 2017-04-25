@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It sould be invalid if input does not contains only number 1`] = `
+<Valle(Input)
+  isNumeric={true}
+>
+  <Input
+    isNumeric={true}
+    message="Hi does not contain only numbers. Please check your value and try again."
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        Hi does not contain only numbers. Please check your value and try again.
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
+exports[`It sould be valid if input contains only number 1`] = `
+<Valle(Input)
+  isNumeric={true}
+>
+  <Input
+    isNumeric={true}
+    message=""
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Valle(Input)>
+`;
