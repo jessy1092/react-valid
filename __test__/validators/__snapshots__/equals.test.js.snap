@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It sould be invalid if input does not equals string 1`] = `
+<Valle(Input)
+  equals="Hi"
+>
+  <Input
+    equals="Hi"
+    message="This does not equal Hi. Please check your value and try again."
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        This does not equal Hi. Please check your value and try again.
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
+exports[`It sould be valid if input equals string 1`] = `
+<Valle(Input)
+  equals="jessy"
+>
+  <Input
+    equals="jessy"
+    message=""
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Valle(Input)>
+`;
