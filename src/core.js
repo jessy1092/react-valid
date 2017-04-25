@@ -37,27 +37,45 @@ export const connect = (validators, Component) => {
       this.state = {
         valid: true,
         message: '',
+        validatorKeys: [],
       };
 
       this.validate = this.validate.bind(this);
     }
 
+    componentWillMount() {
+      const validatorKeys = Object.keys(validators).filter(name =>
+        Object.prototype.hasOwnProperty.call(this.props, name),
+      );
+      this.setState({
+        validatorKeys,
+      });
+    }
+
+    componentWillReceiveProps(nextProps) {
+      const validatorKeys = Object.keys(validators).filter(name =>
+        Object.prototype.hasOwnProperty.call(nextProps, name),
+      );
+      this.setState({
+        validatorKeys,
+      });
+    }
+
     validate(value) {
-      const { onInvalid = () => {}, onValid = () => {}, ...other } = this.props;
+      const { onInvalid = () => {}, onValid = () => {} } = this.props;
+      const { validatorKeys } = this.state;
       let message = '';
 
-      const status = Object.keys(validators).every(name => {
-        if (Object.prototype.hasOwnProperty.call(other, name)) {
-          if (!validators[name].method(value, this.props[name])) {
-            if (typeof validators[name].message === 'string') {
-              // Display normal string message
-              message = validators[name].message;
-            } else {
-              // Use template to generate message
-              message = validators[name].message(value, this.props[name]);
-            }
-            return false;
+      const status = validatorKeys.every(name => {
+        if (!validators[name].method(value, this.props[name])) {
+          if (typeof validators[name].message === 'string') {
+            // Display normal string message
+            message = validators[name].message;
+          } else {
+            // Use template to generate message
+            message = validators[name].message(value, this.props[name]);
           }
+          return false;
         }
         return true;
       });
@@ -78,7 +96,18 @@ export const connect = (validators, Component) => {
     }
 
     render() {
-      return <Component {...this.props} {...this.state} validate={this.validate} />;
+      const childrenProps = {};
+      const { validatorKeys, valid, message } = this.state;
+
+      Object.keys(this.props).forEach(name => {
+        if (validatorKeys.indexOf(name) === -1 && name !== 'onValid' && name !== 'onInvalid') {
+          childrenProps[name] = this.props[name];
+        }
+      });
+
+      return (
+        <Component {...childrenProps} valid={valid} message={message} validate={this.validate} />
+      );
     }
   }
   ValidComponent.displayName = `Valle(${displayName})`;

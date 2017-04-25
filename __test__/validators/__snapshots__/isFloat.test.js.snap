@@ -10,12 +10,6 @@ exports[`It sould be in the range if input set min/max range 1`] = `
   }
 >
   <Input
-    isFloat={
-      Object {
-        "max": 15,
-        "min": 10,
-      }
-    }
     message="0.1 is not a fload value or not in the range. Please check your value and try again."
     valid={false}
     validate={[Function]}
@@ -37,7 +31,6 @@ exports[`It sould be invalid if input is not Float value 1`] = `
   isFloat={true}
 >
   <Input
-    isFloat={true}
     message="Hi is not a fload value or not in the range. Please check your value and try again."
     valid={false}
     validate={[Function]}
@@ -59,7 +52,6 @@ exports[`It sould be valid if input is Float value 1`] = `
   isFloat={true}
 >
   <Input
-    isFloat={true}
     message=""
     valid={true}
     validate={[Function]}

@@ -5,7 +5,6 @@ exports[`It sould be invalid if input does not equals string 1`] = `
   equals="Hi"
 >
   <Input
-    equals="Hi"
     message="This does not equal Hi. Please check your value and try again."
     valid={false}
     validate={[Function]}
@@ -27,7 +26,6 @@ exports[`It sould be valid if input equals string 1`] = `
   equals="jessy"
 >
   <Input
-    equals="jessy"
     message=""
     valid={true}
     validate={[Function]}

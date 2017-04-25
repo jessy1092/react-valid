@@ -5,7 +5,6 @@ exports[`It sould be invalid if input does not contains string 1`] = `
   contains="Hi"
 >
   <Input
-    contains="Hi"
     message="This does not contain Hi. Please check your value and try again."
     valid={false}
     validate={[Function]}
@@ -27,7 +26,6 @@ exports[`It sould be valid if input contains string 1`] = `
   contains="jessy"
 >
   <Input
-    contains="jessy"
     message=""
     valid={true}
     validate={[Function]}

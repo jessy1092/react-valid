@@ -6,7 +6,6 @@ exports[`It could add custom methods through addMethods 1`] = `
 >
   <Input
     message=""
-    required={true}
     valid={true}
     validate={[Function]}
   >
@@ -25,7 +24,6 @@ exports[`It could add template message to custom message 1`] = `
   empty={true}
 >
   <Input
-    empty={true}
     message="It has value: Hi"
     valid={false}
     validate={[Function]}
@@ -47,7 +45,6 @@ exports[`It could use message method to custom message 1`] = `
   empty={true}
 >
   <Input
-    empty={true}
     message="It has value: Hi"
     valid={false}
     validate={[Function]}
@@ -70,7 +67,6 @@ exports[`It sould be not valid if input has empty 1`] = `
 >
   <Input
     message="It should have value"
-    required={true}
     valid={false}
     validate={[Function]}
   >
@@ -92,7 +88,6 @@ exports[`It sould be valid if input has value 1`] = `
 >
   <Input
     message=""
-    required={true}
     valid={true}
     validate={[Function]}
   >
@@ -114,9 +109,6 @@ exports[`It sould call onInvalid if input is invalid 1`] = `
 >
   <Input
     message="It should have value"
-    onInvalid={[Function]}
-    onValid={[Function]}
-    required={true}
     valid={false}
     validate={[Function]}
   >
@@ -140,9 +132,6 @@ exports[`It sould call onValid if input is valid 1`] = `
 >
   <Input
     message=""
-    onInvalid={[Function]}
-    onValid={[Function]}
-    required={true}
     valid={true}
     validate={[Function]}
   >

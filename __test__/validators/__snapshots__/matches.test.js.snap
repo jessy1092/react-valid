@@ -5,7 +5,6 @@ exports[`It sould be invalid if input does not match the pattern 1`] = `
   matches={/abc/i}
 >
   <Input
-    matches={/abc/i}
     message="Hi does not match the pattern /abc/i. Please check your value and try again."
     valid={false}
     validate={[Function]}
@@ -27,7 +26,6 @@ exports[`It sould be valid if input matches the pattern 1`] = `
   matches={/abc/i}
 >
   <Input
-    matches={/abc/i}
     message=""
     valid={true}
     validate={[Function]}

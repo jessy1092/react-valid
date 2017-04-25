@@ -5,7 +5,6 @@ exports[`It sould be invalid if input without email 1`] = `
   isEmail={true}
 >
   <Input
-    isEmail={true}
     message="This is not a valid email address. Please check your email and try again."
     valid={false}
     validate={[Function]}
@@ -27,7 +26,6 @@ exports[`It sould be valid if input email 1`] = `
   isEmail={true}
 >
   <Input
-    isEmail={true}
     message=""
     valid={true}
     validate={[Function]}

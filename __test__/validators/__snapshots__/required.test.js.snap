@@ -6,7 +6,6 @@ exports[`It sould be invalid if input enter empty value 1`] = `
 >
   <Input
     message="This required value. Please check your value and try again."
-    required={true}
     valid={false}
     validate={[Function]}
   >
@@ -28,7 +27,6 @@ exports[`It sould be valid if input has value 1`] = `
 >
   <Input
     message=""
-    required={true}
     valid={true}
     validate={[Function]}
   >

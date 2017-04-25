@@ -5,7 +5,6 @@ exports[`It sould be invalid if input is not Boolean value 1`] = `
   isBoolean={true}
 >
   <Input
-    isBoolean={true}
     message="Hi is not a boolean value. Please check your value and try again."
     valid={false}
     validate={[Function]}
@@ -27,7 +26,6 @@ exports[`It sould be valid if input is Boolean value 1`] = `
   isBoolean={true}
 >
   <Input
-    isBoolean={true}
     message=""
     valid={true}
     validate={[Function]}

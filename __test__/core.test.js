@@ -53,6 +53,28 @@ test('It sould be return valle component if connect the basic component', () => 
   expect(wrapper).toMatchSnapshot();
 });
 
+test('It sould has validatorKeys if component set validators', () => {
+  const validators = {
+    required: {
+      method: value => value !== '',
+      message: 'It should have value',
+    },
+  };
+
+  const ValidInput = connect(validators, Input);
+  const wrapper = mount(<ValidInput required />);
+
+  expect(wrapper.state('validatorKeys')).toEqual(['required']);
+});
+
+test('It could pass through custom property', () => {
+  const ValidInput = connect({}, Input);
+  const wrapper = mount(<ValidInput className="test" />);
+
+  expect(wrapper.find('Input').prop('className')).toEqual('test');
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('It could use template to generate message', () => {
   const messageGenerator = template`${0} is the default value`;
 
