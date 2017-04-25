@@ -5,6 +5,7 @@ import contains from './validators/contains';
 import equals from './validators/equals';
 import isBoolean from './validators/isBoolean';
 import isFloat from './validators/isFloat';
+import isISO8601 from './validators/isISO8601';
 
 export function createValle() {
   let validators = {};
@@ -30,5 +31,6 @@ valle.addMethods(contains);
 valle.addMethods(equals);
 valle.addMethods(isBoolean);
 valle.addMethods(isFloat);
+valle.addMethods(isISO8601);
 
 export default valle;
