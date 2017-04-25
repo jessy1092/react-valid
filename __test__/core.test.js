@@ -71,6 +71,12 @@ test('It could use template to generate message with property number value', () 
   expect(messageGenerator('', 321)).toEqual('321 is the property number value');
 });
 
+test('It could use template to generate message with property regex value', () => {
+  const messageGenerator = template`${1} is the property regex value`;
+
+  expect(messageGenerator('', /abc/i)).toEqual('/abc/i is the property regex value');
+});
+
 test('It could use template to generate message with property object value', () => {
   const messageGenerator = template`${'foo'} is the property object value`;
 

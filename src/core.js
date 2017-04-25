@@ -93,7 +93,9 @@ export const template = (strings, ...keys) => (validateValue, props) => {
     if (key === 0) {
       value = validateValue;
     } else if (key === 1) {
-      value = typeof props === 'string' || !isNaN(props) ? props : props[key];
+      value = typeof props === 'string' || !isNaN(props) || props instanceof RegExp
+        ? props
+        : props[key];
     } else {
       value = props[key];
     }
