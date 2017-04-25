@@ -92,7 +92,7 @@ valle.addMethods({
 Validator object format:
 
 - [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
-- [`message`]\(*String*): Validate failed message
+- [`message`]\(*String | Function*): Validate failed message
 
 ### connect(Component)
 
@@ -122,6 +122,24 @@ valle.addMethods({
 - `${1}`: The property value
 - `${key}`: If property value is the object, it could use key to read it.
 
+### Message method
+
+You could also set message method instead of template string.
+
+ex.
+```js
+valle.addMethods({
+  empty: {
+    method: value => value === '',
+    message: value => `It has value: ${value}`,
+  },
+});
+```
+
+#### Arguments
+
+- [`value`]\(*Function*): Current validate value
+- [`property value`]\(*String*): The property value
 
 ## Todo
 

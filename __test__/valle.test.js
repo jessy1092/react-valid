@@ -128,3 +128,27 @@ test('It could add template message to custom message', () => {
   expect(wrapper.state('message')).toEqual('It has value: Hi');
   expect(wrapper).toMatchSnapshot();
 });
+
+test('It could use message method to custom message', () => {
+  const valle = createValle();
+
+  valle.addMethods({
+    empty: {
+      method: value => value === '',
+      message: value => `It has value: ${value}`,
+    },
+  });
+
+  const ValidInput = valle.connect(Input);
+  const wrapper = mount(<ValidInput empty />);
+
+  wrapper.find('input').simulate('change', {
+    target: {
+      value: 'Hi',
+    },
+  });
+
+  expect(wrapper.state('valid')).toEqual(false);
+  expect(wrapper.state('message')).toEqual('It has value: Hi');
+  expect(wrapper).toMatchSnapshot();
+});
