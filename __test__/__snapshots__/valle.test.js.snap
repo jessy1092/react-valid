@@ -83,3 +83,53 @@ exports[`It sould be valid if input has value 1`] = `
   </Input>
 </Valle(Input)>
 `;
+
+exports[`It sould call onInvalid if input is invalid 1`] = `
+<Valle(Input)
+  onInvalid={[Function]}
+  onValid={[Function]}
+  required={true}
+>
+  <Input
+    message="It should have value"
+    onInvalid={[Function]}
+    onValid={[Function]}
+    required={true}
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        It should have value
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
+exports[`It sould call onValid if input is valid 1`] = `
+<Valle(Input)
+  onInvalid={[Function]}
+  onValid={[Function]}
+  required={true}
+>
+  <Input
+    message=""
+    onInvalid={[Function]}
+    onValid={[Function]}
+    required={true}
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Valle(Input)>
+`;

@@ -45,8 +45,11 @@ valle.addMethod('required', value => value !== '', 'It should have value');
 const ValidInput = valle.connect(Input);
 
 ReactDOM.render(
-	// Just pass properties to tell valle which validator you want to use
-	<ValidInput required />,
+	<ValidInput
+    required  // Just pass properties to tell valle which validator you want to use
+    onValid={value => console.log(`This is valid value: ${value}`)}  // onValid would be called when validate success
+    onInvalid={value => console.log(`This is invalid value: ${value}`)}  // onValid would be called when validate falied
+  />,
 	document.getElementById('content')
 );
 ```

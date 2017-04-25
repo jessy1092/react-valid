@@ -43,7 +43,7 @@ export const connect = (validators, Component) => {
     }
 
     validate(value) {
-      const { onError = () => {}, ...other } = this.props;
+      const { onInvalid = () => {}, onValid = () => {}, ...other } = this.props;
       let message = '';
 
       const status = Object.keys(validators).every(name => {
@@ -69,7 +69,9 @@ export const connect = (validators, Component) => {
         },
         () => {
           if (!status) {
-            onError(value);
+            onInvalid(value);
+          } else {
+            onValid(value);
           }
         },
       );
