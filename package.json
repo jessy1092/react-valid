@@ -1,7 +1,7 @@
 {
   "name": "valle",
   "description": "Help to validate react component easily, functionally and extendable",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": [
     "react",
     "hoc",
