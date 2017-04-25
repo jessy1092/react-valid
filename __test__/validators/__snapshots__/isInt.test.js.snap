@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It sould be in the range if input set min/max range 1`] = `
+<Valle(Input)
+  isInt={
+    Object {
+      "max": 15,
+      "min": 10,
+    }
+  }
+>
+  <Input
+    isInt={
+      Object {
+        "max": 15,
+        "min": 10,
+      }
+    }
+    message="1 is not a int value or not in the range. Please check your value and try again."
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        1 is not a int value or not in the range. Please check your value and try again.
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
+exports[`It sould be invalid if input is not Int value 1`] = `
+<Valle(Input)
+  isInt={true}
+>
+  <Input
+    isInt={true}
+    message="Hi is not a int value or not in the range. Please check your value and try again."
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        Hi is not a int value or not in the range. Please check your value and try again.
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
+exports[`It sould be valid if input is Int value 1`] = `
+<Valle(Input)
+  isInt={true}
+>
+  <Input
+    isInt={true}
+    message=""
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Valle(Input)>
+`;
