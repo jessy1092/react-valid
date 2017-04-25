@@ -143,9 +143,9 @@ valle.addMethods({
 
 ## Todo
 
-- [ ] Add default validator. Like `required`, `isEmail`, `maxLength`
-- [ ] Support `addMethods` to add many validators at onece
-- [ ] Filter properties key to prevent pass unneccessay properties to child component
+- [x] Add default validator. Like `required`, `isEmail`, `isInt`
+- [x] Support `addMethods` to add many validators at onece
+- [x] Filter properties key to prevent pass unneccessay properties to child component
 - etc...
 
 ## Contribute
