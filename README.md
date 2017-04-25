@@ -69,7 +69,7 @@ valle.addMethod('required', value => value !== '', 'It should have value');
 
 - [`name`]\(*String*): Validator name
 - [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
-- [`message`]\(*String*): Validate failed message
+- [`message`]\(*String | Function*): Validate failed message
 
 ### addMethods(validators)
 
