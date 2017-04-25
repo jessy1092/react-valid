@@ -4,6 +4,7 @@ import isEmail from './validators/isEmail';
 import contains from './validators/contains';
 import equals from './validators/equals';
 import isBoolean from './validators/isBoolean';
+import isFloat from './validators/isFloat';
 
 export function createValle() {
   let validators = {};
@@ -28,5 +29,6 @@ valle.addMethods(isEmail);
 valle.addMethods(contains);
 valle.addMethods(equals);
 valle.addMethods(isBoolean);
+valle.addMethods(isFloat);
 
 export default valle;
