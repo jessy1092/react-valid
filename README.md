@@ -45,7 +45,7 @@ valle.addMethod('required', value => value !== '', 'It should have value');
 const ValidInput = valle.connect(Input);
 
 ReactDOM.render(
-	<ValidInput
+  <ValidInput
     required  // Just pass properties to tell valle which validator you want to use
     onValid={value => console.log(`This is valid value: ${value}`)}  // onValid would be called when validate success
     onInvalid={value => console.log(`This is invalid value: ${value}`)}  // onValid would be called when validate falied
@@ -93,6 +93,22 @@ Validator object format:
 
 - [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
 - [`message`]\(*String | Function*): Validate failed message
+
+### setMessages(validators)
+
+Could override the validators' default message
+
+ex. 
+```js
+valle.addMethods({
+  required: 'It would override the required validator\'s message',
+});
+```
+
+#### Arguments
+
+- [`Messages`]\(*Object*): The message object. key is validator's name, value is message which want to override
+
 
 ### connect(Component)
 

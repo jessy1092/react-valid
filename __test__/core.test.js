@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { addMethod, addMethods, connect, template } from '../src/core';
+import { addMethod, addMethods, connect, template, setMessages } from '../src/core';
 
 import Input from './fakeComponent/Input';
 
@@ -15,6 +15,23 @@ test('It could add custom method through addMethod', () => {
 
   expect(newValidators[validatorName].message).toEqual(validatorMessage);
   expect(newValidators[validatorName].method).toEqual(validatorMethod);
+});
+
+test('It could overriide default message through setMessages', () => {
+  const validators = {};
+  const appendValidators = {
+    required: {
+      method: value => value !== '',
+      message: 'It should have value',
+    },
+  };
+
+  const newValidators = addMethods(validators, appendValidators);
+  const overrideValidators = setMessages(newValidators, {
+    required: 'The message was overrided',
+  });
+
+  expect(overrideValidators.required.message).toEqual('The message was overrided');
 });
 
 test('It could add custom methods through addMethods', () => {

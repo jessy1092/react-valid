@@ -28,6 +28,20 @@ export const addMethods = (validators, appendValidators = {}) => {
   return newValidates;
 };
 
+export const setMessages = (validators, overrideValidators) => {
+  const newValidates = {
+    ...validators,
+  };
+
+  Object.keys(overrideValidators).forEach(name => {
+    if (Object.prototype.hasOwnProperty.call(newValidates, name)) {
+      newValidates[name].message = overrideValidators[name];
+    }
+  });
+
+  return newValidates;
+};
+
 export const connect = (validators, Component) => {
   const displayName = Component.displayName || Component.name || 'Component';
 

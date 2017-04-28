@@ -1,4 +1,4 @@
-import { addMethod, addMethods, connect, template } from './core';
+import { addMethod, addMethods, connect, template, setMessages } from './core';
 
 import isEmail from './validators/isEmail';
 import contains from './validators/contains';
@@ -23,6 +23,9 @@ export function createValle() {
     },
     connect(Component) {
       return connect(validators, Component);
+    },
+    setMessages(overrideValidators) {
+      validators = setMessages(validators, overrideValidators);
     },
     template,
   };
