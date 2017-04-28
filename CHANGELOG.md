@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/jessy1092/valle/compare/v0.1.0...v0.2.0) (2017-04-28)
+
+
+### Features
+
+* Implement the setMessages method to override the default message ([43fa3ff](https://github.com/jessy1092/valle/commit/43fa3ff))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/jessy1092/valle/compare/v0.0.1...v0.1.0) (2017-04-25)
 
