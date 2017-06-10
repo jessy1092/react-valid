@@ -1,6 +1,8 @@
+import { isEmpty } from './util';
+
 export default {
   required: {
-    method: value => typeof value !== 'undefined' && value !== null && value !== '',
+    method: value => !isEmpty(value),
     message: 'This required value. Please check your value and try again.',
   },
 };
