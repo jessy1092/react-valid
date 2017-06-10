@@ -43,3 +43,21 @@ test('It sould be valid if input contains string', () => {
   expect(wrapper.state('message')).toEqual('');
   expect(wrapper).toMatchSnapshot();
 });
+
+test('It sould be valid if input is empty', () => {
+  const valle = createValle();
+  valle.addMethods(contains);
+
+  const ValidInput = valle.connect(Input);
+  const wrapper = mount(<ValidInput contains="jessy" />);
+
+  wrapper.find('input').simulate('change', {
+    target: {
+      value: '',
+    },
+  });
+
+  expect(wrapper.state('valid')).toEqual(true);
+  expect(wrapper.state('message')).toEqual('');
+  expect(wrapper).toMatchSnapshot();
+});

@@ -63,3 +63,21 @@ test('It sould be in the range if input set min/max range', () => {
   );
   expect(wrapper).toMatchSnapshot();
 });
+
+test('It sould be valid if input is empty', () => {
+  const valle = createValle();
+  valle.addMethods(isFloat);
+
+  const ValidInput = valle.connect(Input);
+  const wrapper = mount(<ValidInput isFloat />);
+
+  wrapper.find('input').simulate('change', {
+    target: {
+      value: '',
+    },
+  });
+
+  expect(wrapper.state('valid')).toEqual(true);
+  expect(wrapper.state('message')).toEqual('');
+  expect(wrapper).toMatchSnapshot();
+});

@@ -39,3 +39,22 @@ exports[`It sould be valid if input equals string 1`] = `
   </Input>
 </Valle(Input)>
 `;
+
+exports[`It sould be valid if input is empty 1`] = `
+<Valle(Input)
+  equals="jessy"
+>
+  <Input
+    message=""
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Valle(Input)>
+`;

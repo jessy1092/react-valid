@@ -43,3 +43,21 @@ test('It sould be valid if input matches the pattern', () => {
   expect(wrapper.state('message')).toEqual('');
   expect(wrapper).toMatchSnapshot();
 });
+
+test('It sould be valid if input is empty', () => {
+  const valle = createValle();
+  valle.addMethods(matches);
+
+  const ValidInput = valle.connect(Input);
+  const wrapper = mount(<ValidInput matches={/abc/i} />);
+
+  wrapper.find('input').simulate('change', {
+    target: {
+      value: '',
+    },
+  });
+
+  expect(wrapper.state('valid')).toEqual(true);
+  expect(wrapper.state('message')).toEqual('');
+  expect(wrapper).toMatchSnapshot();
+});

@@ -43,3 +43,21 @@ test('It sould be valid if input contains only number', () => {
   expect(wrapper.state('message')).toEqual('');
   expect(wrapper).toMatchSnapshot();
 });
+
+test('It sould be valid if input is empty', () => {
+  const valle = createValle();
+  valle.addMethods(isNumeric);
+
+  const ValidInput = valle.connect(Input);
+  const wrapper = mount(<ValidInput isNumeric />);
+
+  wrapper.find('input').simulate('change', {
+    target: {
+      value: '',
+    },
+  });
+
+  expect(wrapper.state('valid')).toEqual(true);
+  expect(wrapper.state('message')).toEqual('');
+  expect(wrapper).toMatchSnapshot();
+});

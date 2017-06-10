@@ -21,6 +21,25 @@ exports[`It sould be invalid if input does not match the pattern 1`] = `
 </Valle(Input)>
 `;
 
+exports[`It sould be valid if input is empty 1`] = `
+<Valle(Input)
+  matches={/abc/i}
+>
+  <Input
+    message=""
+    valid={true}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div />
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
 exports[`It sould be valid if input matches the pattern 1`] = `
 <Valle(Input)
   matches={/abc/i}
