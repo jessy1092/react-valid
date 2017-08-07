@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input without email 1`] = `
 <Valle(Input)
   isEmail={true}
+  onInvalid={[Function]}
 >
   <Input
     message="This is not a valid email address. Please check your email and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input without email 1`] = `
 exports[`It sould be valid if input email 1`] = `
 <Valle(Input)
   isEmail={true}
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input email 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   isEmail={true}
+  onValid={[Function]}
 >
   <Input
     message=""

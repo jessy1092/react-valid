@@ -1,19 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`It could add custom methods through addMethods 1`] = `
+exports[`It could add async custom methods through addMethods 1`] = `
 <Valle(Input)
-  required={true}
+  empty={true}
+  onInvalid={[Function]}
 >
   <Input
-    message=""
-    valid={true}
+    message="It should be empty after async check"
+    valid={false}
     validate={[Function]}
   >
     <div>
       <input
         onChange={[Function]}
       />
-      <div />
+      <div>
+        It should be empty after async check
+      </div>
+    </div>
+  </Input>
+</Valle(Input)>
+`;
+
+exports[`It could add custom methods through addMethods 1`] = `
+<Valle(Input)
+  empty={true}
+  onInvalid={[Function]}
+>
+  <Input
+    message="It should be empty"
+    valid={false}
+    validate={[Function]}
+  >
+    <div>
+      <input
+        onChange={[Function]}
+      />
+      <div>
+        It should be empty
+      </div>
     </div>
   </Input>
 </Valle(Input)>
@@ -22,6 +47,7 @@ exports[`It could add custom methods through addMethods 1`] = `
 exports[`It could add template message to custom message 1`] = `
 <Valle(Input)
   empty={true}
+  onInvalid={[Function]}
 >
   <Input
     message="It has value: Hi"
@@ -43,6 +69,7 @@ exports[`It could add template message to custom message 1`] = `
 exports[`It could use message method to custom message 1`] = `
 <Valle(Input)
   empty={true}
+  onInvalid={[Function]}
 >
   <Input
     message="It has value: Hi"
@@ -63,6 +90,7 @@ exports[`It could use message method to custom message 1`] = `
 
 exports[`It sould be not valid if input has empty 1`] = `
 <Valle(Input)
+  onInvalid={[Function]}
   required={true}
 >
   <Input
@@ -84,49 +112,6 @@ exports[`It sould be not valid if input has empty 1`] = `
 
 exports[`It sould be valid if input has value 1`] = `
 <Valle(Input)
-  required={true}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
-`;
-
-exports[`It sould call onInvalid if input is invalid 1`] = `
-<Valle(Input)
-  onInvalid={[Function]}
-  onValid={[Function]}
-  required={true}
->
-  <Input
-    message="It should have value"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It should have value
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
-`;
-
-exports[`It sould call onValid if input is valid 1`] = `
-<Valle(Input)
-  onInvalid={[Function]}
   onValid={[Function]}
   required={true}
 >

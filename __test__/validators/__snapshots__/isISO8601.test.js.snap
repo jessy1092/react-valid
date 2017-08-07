@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input is not ISO8601 date 1`] = `
 <Valle(Input)
   isISO8601={true}
+  onInvalid={[Function]}
 >
   <Input
     message="Hi is not a valid ISO 8601 date. Please check your value and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input is not ISO8601 date 1`] = `
 exports[`It sould be valid if input is ISO8601 date 1`] = `
 <Valle(Input)
   isISO8601={true}
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input is ISO8601 date 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   isISO8601={true}
+  onValid={[Function]}
 >
   <Input
     message=""

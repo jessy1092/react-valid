@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input does not match the pattern 1`] = `
 <Valle(Input)
   matches={/abc/i}
+  onInvalid={[Function]}
 >
   <Input
     message="Hi does not match the pattern /abc/i. Please check your value and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input does not match the pattern 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   matches={/abc/i}
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input is empty 1`] = `
 exports[`It sould be valid if input matches the pattern 1`] = `
 <Valle(Input)
   matches={/abc/i}
+  onValid={[Function]}
 >
   <Input
     message=""

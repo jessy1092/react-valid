@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input is not Boolean value 1`] = `
 <Valle(Input)
   isBoolean={true}
+  onInvalid={[Function]}
 >
   <Input
     message="Hi is not a boolean value. Please check your value and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input is not Boolean value 1`] = `
 exports[`It sould be valid if input is Boolean value 1`] = `
 <Valle(Input)
   isBoolean={true}
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input is Boolean value 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   isBoolean={true}
+  onValid={[Function]}
 >
   <Input
     message=""

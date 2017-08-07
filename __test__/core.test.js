@@ -48,7 +48,7 @@ test('It could add custom methods through addMethods', () => {
   expect(newValidators).toEqual(appendValidators);
 });
 
-test('It sould be return valle component if connect the basic component', () => {
+test('It sould be return valle component if connect the basic component', done => {
   const validators = {
     required: {
       method: value => value !== '',
@@ -57,17 +57,20 @@ test('It sould be return valle component if connect the basic component', () => 
   };
 
   const ValidInput = connect(validators, Input);
-  const wrapper = mount(<ValidInput required />);
+  const onInvalid = (wrapper, value) => {
+    expect(value).toEqual('');
+    expect(wrapper.state('valid')).toEqual(false);
+    expect(wrapper.state('message')).toEqual('It should have value');
+    expect(wrapper).toMatchSnapshot();
+    done();
+  };
+  const wrapper = mount(<ValidInput required onInvalid={value => onInvalid(wrapper, value)} />);
 
   wrapper.find('input').simulate('change', {
     target: {
       value: '',
     },
   });
-
-  expect(wrapper.state('valid')).toEqual(false);
-  expect(wrapper.state('message')).toEqual('It should have value');
-  expect(wrapper).toMatchSnapshot();
 });
 
 test('It sould has validatorKeys if component set validators', () => {

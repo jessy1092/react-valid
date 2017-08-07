@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input does not contains only number 1`] = `
 <Valle(Input)
   isNumeric={true}
+  onInvalid={[Function]}
 >
   <Input
     message="Hi does not contain only numbers. Please check your value and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input does not contains only number 1`] = `
 exports[`It sould be valid if input contains only number 1`] = `
 <Valle(Input)
   isNumeric={true}
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input contains only number 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   isNumeric={true}
+  onValid={[Function]}
 >
   <Input
     message=""

@@ -22,6 +22,7 @@ exports[`It could pass through custom property 1`] = `
 
 exports[`It sould be return valle component if connect the basic component 1`] = `
 <Valle(Input)
+  onInvalid={[Function]}
   required={true}
 >
   <Input

@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input does not contains string 1`] = `
 <Valle(Input)
   contains="Hi"
+  onInvalid={[Function]}
 >
   <Input
     message="This does not contain Hi. Please check your value and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input does not contains string 1`] = `
 exports[`It sould be valid if input contains string 1`] = `
 <Valle(Input)
   contains="jessy"
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input contains string 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   contains="jessy"
+  onValid={[Function]}
 >
   <Input
     message=""

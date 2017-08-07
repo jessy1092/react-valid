@@ -3,6 +3,7 @@
 exports[`It sould be invalid if input does not equals string 1`] = `
 <Valle(Input)
   equals="Hi"
+  onInvalid={[Function]}
 >
   <Input
     message="This does not equal Hi. Please check your value and try again."
@@ -24,6 +25,7 @@ exports[`It sould be invalid if input does not equals string 1`] = `
 exports[`It sould be valid if input equals string 1`] = `
 <Valle(Input)
   equals="jessy"
+  onValid={[Function]}
 >
   <Input
     message=""
@@ -43,6 +45,7 @@ exports[`It sould be valid if input equals string 1`] = `
 exports[`It sould be valid if input is empty 1`] = `
 <Valle(Input)
   equals="jessy"
+  onValid={[Function]}
 >
   <Input
     message=""

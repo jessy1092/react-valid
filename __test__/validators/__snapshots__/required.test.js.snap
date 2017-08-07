@@ -2,6 +2,7 @@
 
 exports[`It sould be invalid if input enter empty value 1`] = `
 <Valle(Input)
+  onInvalid={[Function]}
   required={true}
 >
   <Input
@@ -23,6 +24,7 @@ exports[`It sould be invalid if input enter empty value 1`] = `
 
 exports[`It sould be valid if input has value 1`] = `
 <Valle(Input)
+  onValid={[Function]}
   required={true}
 >
   <Input

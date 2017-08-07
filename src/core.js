@@ -75,24 +75,31 @@ export const connect = (validators, Component) => {
       });
     }
 
-    validate(value) {
+    async validate(value) {
       const { onInvalid = () => {}, onValid = () => {} } = this.props;
       const { validatorKeys } = this.state;
       let message = '';
 
-      const status = validatorKeys.every(name => {
-        if (!validators[name].method(value, this.props[name])) {
-          if (typeof validators[name].message === 'string') {
-            // Display normal string message
-            message = validators[name].message;
-          } else {
-            // Use template to generate message
-            message = validators[name].message(value, this.props[name]);
+      const statusGroup = await Promise.all(
+        validatorKeys.map(async name => {
+          const status = await validators[name].method(value, this.props[name]);
+
+          if (!status) {
+            if (typeof validators[name].message === 'string') {
+              // Display normal string message
+              message = validators[name].message;
+            } else {
+              // Use template to generate message
+              message = validators[name].message(value, this.props[name]);
+            }
+            return false;
           }
-          return false;
-        }
-        return true;
-      });
+
+          return true;
+        }),
+      );
+
+      const status = statusGroup.every(s => s);
 
       this.setState(
         {
@@ -107,6 +114,8 @@ export const connect = (validators, Component) => {
           }
         },
       );
+
+      return status;
     }
 
     render() {
@@ -136,9 +145,8 @@ export const template = (strings, ...keys) => (validateValue, props) => {
     if (key === 0) {
       value = validateValue;
     } else if (key === 1) {
-      value = typeof props === 'string' || !isNaN(props) || props instanceof RegExp
-        ? props
-        : props[key];
+      value =
+        typeof props === 'string' || !isNaN(props) || props instanceof RegExp ? props : props[key];
     } else {
       value = props[key];
     }
