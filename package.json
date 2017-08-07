@@ -1,13 +1,8 @@
 {
   "name": "valle",
   "description": "Help to validate react component easily, functionally and extendable",
-  "version": "0.3.0",
-  "keywords": [
-    "react",
-    "hoc",
-    "higher order component",
-    "validate"
-  ],
+  "version": "0.4.0",
+  "keywords": ["react", "hoc", "higher order component", "validate"],
   "contributor": [
     {
       "name": "Lee",
@@ -65,8 +60,6 @@
       "<rootDir>/__test__/",
       "<rootDir>/node_modules/"
     ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

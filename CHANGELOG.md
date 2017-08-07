@@ -1,3 +1,14 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/jessy1092/valle/compare/v0.3.0...v0.4.0) (2017-08-07)
+
+
+### Features
+
+* Support asynchronous validation methods ([2421b9d](https://github.com/jessy1092/valle/commit/2421b9d))
+* Upgrade validator.js into 8.0.0 ([33a981d](https://github.com/jessy1092/valle/commit/33a981d))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/jessy1092/valle/compare/v0.2.0...v0.3.0) (2017-06-10)
 
