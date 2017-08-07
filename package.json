@@ -35,7 +35,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "react": "^15.5.4",
-    "validator": "^7.0.0"
+    "validator": "^8.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
