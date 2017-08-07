@@ -16,6 +16,7 @@ Inspire by
 - **Extendable**: You can defined validator through jQuery-validation-like `addMethod` by yourself
 - **Easily**: Just pass the properties to component to control which validator you want to use
 - **Functionally**: valle use HOC component to wrap component which want to be valided, so you can wrap any component easily.
+- **Asynchronous**: It support asynchronous validator.
 
 ## Full Example
 
@@ -65,17 +66,23 @@ ex.
 valle.addMethod('required', value => value !== '', 'It should have value');
 ```
 
+Support asynchronous method. ex.
+ex.
+```js
+valle.addMethod('required', async value => new Promise(resolve => setTimeout(() => resolve(value !== ''), 500)), 'It should have value');
+```
+
 #### Arguments
 
 - [`name`]\(*String*): Validator name
-- [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
+- [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`. It could be the asynchronous method and return promise
 - [`message`]\(*String | Function*): Validate failed message
 
 ### addMethods(validators)
 
 Could define the many custom validators at once
 
-ex. 
+ex.
 ```js
 valle.addMethods({
   required: {
@@ -91,14 +98,14 @@ valle.addMethods({
 
 Validator object format:
 
-- [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`
+- [`method(value, property value)`]\(*Function*): Validator method. it would be called when `validate` be called. It would catch `value`(validate function argument) and `property value`. It could be the asynchronous method and return promise
 - [`message`]\(*String | Function*): Validate failed message
 
 ### setMessages(validators)
 
 Could override the validators' default message
 
-ex. 
+ex.
 ```js
 valle.addMethods({
   required: 'It would override the required validator\'s message',
