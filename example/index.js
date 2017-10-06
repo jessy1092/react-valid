@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
 import valle from '../src';
 import Input from './component/Input';
@@ -11,7 +12,11 @@ valle.addMethod('required', value => value !== '', 'It should have value');
 const ValidInput = valle.connect(Input);
 
 ReactDOM.render(
-  // Just pass properties to tell valle which validator you want to use
-  <ValidInput required />,
+  <AppContainer>
+    {
+      // Just pass properties to tell valle which validator you want to use
+    }
+    <ValidInput required />
+  </AppContainer>,
   document.getElementById('content'),
 );
