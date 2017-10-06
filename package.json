@@ -32,7 +32,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "validator": "^8.0.0"
+    "validator": "^9.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
