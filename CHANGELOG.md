@@ -1,3 +1,14 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/jessy1092/valle/compare/v0.4.0...v0.4.1) (2017-10-06)
+
+
+### Bug Fixes
+
+* Correct the dependencies to support react 16 and upgrade test environment. issue [#5](https://github.com/jessy1092/valle/issues/5) ([b021552](https://github.com/jessy1092/valle/commit/b021552))
+* Upgrade validator to 9.0.0 ([59758c1](https://github.com/jessy1092/valle/commit/59758c1))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/jessy1092/valle/compare/v0.3.0...v0.4.0) (2017-08-07)
 
