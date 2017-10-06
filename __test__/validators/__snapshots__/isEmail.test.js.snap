@@ -1,63 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It sould be invalid if input without email 1`] = `
-<Valle(Input)
-  isEmail={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="This is not a valid email address. Please check your email and try again."
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        This is not a valid email address. Please check your email and try again.
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    This is not a valid email address. Please check your email and try again.
+  </div>
+</div>
 `;
 
 exports[`It sould be valid if input email 1`] = `
-<Valle(Input)
-  isEmail={true}
-  onValid={[Function]}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;
 
 exports[`It sould be valid if input is empty 1`] = `
-<Valle(Input)
-  isEmail={true}
-  onValid={[Function]}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;

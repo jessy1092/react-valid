@@ -1,63 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It sould be invalid if input is not Boolean value 1`] = `
-<Valle(Input)
-  isBoolean={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="Hi is not a boolean value. Please check your value and try again."
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        Hi is not a boolean value. Please check your value and try again.
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    Hi is not a boolean value. Please check your value and try again.
+  </div>
+</div>
 `;
 
 exports[`It sould be valid if input is Boolean value 1`] = `
-<Valle(Input)
-  isBoolean={true}
-  onValid={[Function]}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;
 
 exports[`It sould be valid if input is empty 1`] = `
-<Valle(Input)
-  isBoolean={true}
-  onValid={[Function]}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;

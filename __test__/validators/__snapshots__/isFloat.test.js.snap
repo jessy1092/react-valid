@@ -1,90 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It sould be in the range if input set min/max range 1`] = `
-<Valle(Input)
-  isFloat={
-    Object {
-      "max": 15,
-      "min": 10,
-    }
-  }
-  onInvalid={[Function]}
->
-  <Input
-    message="0.1 is not a fload value or not in the range. Please check your value and try again."
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        0.1 is not a fload value or not in the range. Please check your value and try again.
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    0.1 is not a fload value or not in the range. Please check your value and try again.
+  </div>
+</div>
 `;
 
 exports[`It sould be invalid if input is not Float value 1`] = `
-<Valle(Input)
-  isFloat={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="Hi is not a fload value or not in the range. Please check your value and try again."
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        Hi is not a fload value or not in the range. Please check your value and try again.
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    Hi is not a fload value or not in the range. Please check your value and try again.
+  </div>
+</div>
 `;
 
 exports[`It sould be valid if input is Float value 1`] = `
-<Valle(Input)
-  isFloat={true}
-  onValid={[Function]}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;
 
 exports[`It sould be valid if input is empty 1`] = `
-<Valle(Input)
-  isFloat={true}
-  onValid={[Function]}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;

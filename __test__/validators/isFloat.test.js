@@ -19,7 +19,7 @@ test('It sould be invalid if input is not Float value', done => {
     expect(wrapper.state('message')).toEqual(
       'Hi is not a fload value or not in the range. Please check your value and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isFloat onInvalid={value => onInvalid(wrapper, value)} />);
@@ -40,7 +40,7 @@ test('It sould be valid if input is Float value', done => {
     expect(value).toEqual('0.1');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isFloat onValid={value => onValid(wrapper, value)} />);
@@ -63,7 +63,7 @@ test('It sould be in the range if input set min/max range', done => {
     expect(wrapper.state('message')).toEqual(
       '0.1 is not a fload value or not in the range. Please check your value and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(
@@ -86,7 +86,7 @@ test('It sould be valid if input is empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isFloat onValid={value => onValid(wrapper, value)} />);

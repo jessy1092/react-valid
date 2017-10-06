@@ -13,7 +13,7 @@ test('It sould be valid if input has value', done => {
   const onValid = (wrapper, value) => {
     expect(value).toEqual('1');
     expect(wrapper.state('valid')).toEqual(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput required onValid={value => onValid(wrapper, value)} />);
@@ -34,7 +34,7 @@ test('It sould be not valid if input has empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(false);
     expect(wrapper.state('message')).toEqual('It should have value');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput required onInvalid={value => onInvalid(wrapper, value)} />);
@@ -61,7 +61,7 @@ test('It could add custom methods through addMethods', done => {
     expect(value).toEqual('1');
     expect(wrapper.state('valid')).toEqual(false);
     expect(wrapper.state('message')).toEqual('It should be empty');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput empty onInvalid={value => onInvalid(wrapper, value)} />);
@@ -88,7 +88,7 @@ test('It could add template message to custom message', done => {
     expect(value).toEqual('Hi');
     expect(wrapper.state('valid')).toEqual(false);
     expect(wrapper.state('message')).toEqual('It has value: Hi');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput empty onInvalid={value => onInvalid(wrapper, value)} />);
@@ -115,7 +115,7 @@ test('It could use message method to custom message', done => {
     expect(value).toEqual('Hi');
     expect(wrapper.state('valid')).toEqual(false);
     expect(wrapper.state('message')).toEqual('It has value: Hi');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput empty onInvalid={value => onInvalid(wrapper, value)} />);
@@ -142,7 +142,7 @@ test('It could add async custom methods through addMethods', done => {
     expect(value).toEqual('1');
     expect(wrapper.state('valid')).toEqual(false);
     expect(wrapper.state('message')).toEqual('It should be empty after async check');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput empty onInvalid={value => onInvalid(wrapper, value)} />);

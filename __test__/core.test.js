@@ -61,7 +61,7 @@ test('It sould be return valle component if connect the basic component', done =
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(false);
     expect(wrapper.state('message')).toEqual('It should have value');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput required onInvalid={value => onInvalid(wrapper, value)} />);
@@ -92,7 +92,7 @@ test('It could pass through custom property', () => {
   const wrapper = mount(<ValidInput className="test" />);
 
   expect(wrapper.find('Input').prop('className')).toEqual('test');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.render()).toMatchSnapshot();
 });
 
 test('It could use template to generate message', () => {

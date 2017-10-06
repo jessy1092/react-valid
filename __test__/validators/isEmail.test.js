@@ -17,7 +17,7 @@ test('It sould be invalid if input without email', done => {
     expect(wrapper.state('message')).toEqual(
       'This is not a valid email address. Please check your email and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isEmail onInvalid={value => onInvalid(wrapper, value)} />);
@@ -38,7 +38,7 @@ test('It sould be valid if input email', done => {
     expect(value).toEqual('jessy1092@gmail.com');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isEmail onValid={value => onValid(wrapper, value)} />);
@@ -59,7 +59,7 @@ test('It sould be valid if input is empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isEmail onValid={value => onValid(wrapper, value)} />);

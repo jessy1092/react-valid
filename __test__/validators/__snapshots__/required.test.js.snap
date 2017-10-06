@@ -1,43 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It sould be invalid if input enter empty value 1`] = `
-<Valle(Input)
-  onInvalid={[Function]}
-  required={true}
->
-  <Input
-    message="This required value. Please check your value and try again."
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        This required value. Please check your value and try again.
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    This required value. Please check your value and try again.
+  </div>
+</div>
 `;
 
 exports[`It sould be valid if input has value 1`] = `
-<Valle(Input)
-  onValid={[Function]}
-  required={true}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;

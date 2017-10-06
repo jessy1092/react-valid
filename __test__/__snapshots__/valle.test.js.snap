@@ -1,131 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It could add async custom methods through addMethods 1`] = `
-<Valle(Input)
-  empty={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="It should be empty after async check"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It should be empty after async check
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    It should be empty after async check
+  </div>
+</div>
 `;
 
 exports[`It could add custom methods through addMethods 1`] = `
-<Valle(Input)
-  empty={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="It should be empty"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It should be empty
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    It should be empty
+  </div>
+</div>
 `;
 
 exports[`It could add template message to custom message 1`] = `
-<Valle(Input)
-  empty={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="It has value: Hi"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It has value: Hi
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    It has value: Hi
+  </div>
+</div>
 `;
 
 exports[`It could use message method to custom message 1`] = `
-<Valle(Input)
-  empty={true}
-  onInvalid={[Function]}
->
-  <Input
-    message="It has value: Hi"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It has value: Hi
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    It has value: Hi
+  </div>
+</div>
 `;
 
 exports[`It sould be not valid if input has empty 1`] = `
-<Valle(Input)
-  onInvalid={[Function]}
-  required={true}
->
-  <Input
-    message="It should have value"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It should have value
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    It should have value
+  </div>
+</div>
 `;
 
 exports[`It sould be valid if input has value 1`] = `
-<Valle(Input)
-  onValid={[Function]}
-  required={true}
->
-  <Input
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;

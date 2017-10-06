@@ -17,7 +17,7 @@ test('It sould be invalid if input does not equals string', done => {
     expect(wrapper.state('message')).toEqual(
       'This does not equal Hi. Please check your value and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput equals="Hi" onInvalid={value => onInvalid(wrapper, value)} />);
@@ -38,7 +38,7 @@ test('It sould be valid if input equals string', done => {
     expect(value).toEqual('jessy');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput equals="jessy" onValid={value => onValid(wrapper, value)} />);
@@ -59,7 +59,7 @@ test('It sould be valid if input is empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput equals="jessy" onValid={value => onValid(wrapper, value)} />);

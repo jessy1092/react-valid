@@ -17,7 +17,7 @@ test('It sould be invalid if input is not ISO8601 date', done => {
     expect(wrapper.state('message')).toEqual(
       'Hi is not a valid ISO 8601 date. Please check your value and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isISO8601 onInvalid={value => onInvalid(wrapper, value)} />);
@@ -38,7 +38,7 @@ test('It sould be valid if input is ISO8601 date', done => {
     expect(value).toEqual('2017-04-26T12:30:48,3-06:00');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isISO8601 onValid={value => onValid(wrapper, value)} />);
@@ -59,7 +59,7 @@ test('It sould be valid if input is empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isISO8601 onValid={value => onValid(wrapper, value)} />);
