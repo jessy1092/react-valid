@@ -17,7 +17,7 @@ test('It sould be invalid if input is not Boolean value', done => {
     expect(wrapper.state('message')).toEqual(
       'Hi is not a boolean value. Please check your value and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isBoolean onInvalid={value => onInvalid(wrapper, value)} />);
@@ -38,7 +38,7 @@ test('It sould be valid if input is Boolean value', done => {
     expect(value).toEqual('false');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isBoolean onValid={value => onValid(wrapper, value)} />);
@@ -59,7 +59,7 @@ test('It sould be valid if input is empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput isBoolean onValid={value => onValid(wrapper, value)} />);

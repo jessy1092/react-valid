@@ -17,7 +17,7 @@ test('It sould be invalid if input does not match the pattern', done => {
     expect(wrapper.state('message')).toEqual(
       'Hi does not match the pattern /abc/i. Please check your value and try again.',
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(
@@ -40,7 +40,7 @@ test('It sould be valid if input matches the pattern', done => {
     expect(value).toEqual('qwe2abcasdw');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput matches={/abc/i} onValid={value => onValid(wrapper, value)} />);
@@ -61,7 +61,7 @@ test('It sould be valid if input is empty', done => {
     expect(value).toEqual('');
     expect(wrapper.state('valid')).toEqual(true);
     expect(wrapper.state('message')).toEqual('');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
     done();
   };
   const wrapper = mount(<ValidInput matches={/abc/i} onValid={value => onValid(wrapper, value)} />);

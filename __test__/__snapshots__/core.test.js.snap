@@ -1,43 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`It could pass through custom property 1`] = `
-<Valle(Input)
-  className="test"
->
-  <Input
-    className="test"
-    message=""
-    valid={true}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div />
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div />
+</div>
 `;
 
 exports[`It sould be return valle component if connect the basic component 1`] = `
-<Valle(Input)
-  onInvalid={[Function]}
-  required={true}
->
-  <Input
-    message="It should have value"
-    valid={false}
-    validate={[Function]}
-  >
-    <div>
-      <input
-        onChange={[Function]}
-      />
-      <div>
-        It should have value
-      </div>
-    </div>
-  </Input>
-</Valle(Input)>
+<div>
+  <input />
+  <div>
+    It should have value
+  </div>
+</div>
 `;
